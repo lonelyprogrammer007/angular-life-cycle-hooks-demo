@@ -1,38 +1,42 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { LoggerService } from './logger.service';
+import { LoggerService } from "./logger.service";
 
 @Component({
-  selector: 'peek-a-boo-parent',
+  selector: "peek-a-boo-parent",
   template: `
-  <hr />
-  <div class="parent">
-    <h2>Peek-A-Boo</h2>
+    <hr />
+    <div class="parent" style="border: 2px solid red;">
+      <h2>Peek-A-Boo</h2>
 
-    <button type="button" (click)="toggleChild()">
-      {{hasChild ? 'Destroy' : 'Create'}} PeekABooComponent
-    </button>
-    <button type="button" (click)="updateHero()" [hidden]="!hasChild">Update Hero</button>
+      <button type="button" (click)="toggleChild()">
+        {{ hasChild ? "Destroy" : "Create" }} PeekABooComponent
+      </button>
+      <button type="button" (click)="updateHero()" [hidden]="!hasChild">
+        Update Hero
+      </button>
 
-    <div class="info">
-      <peek-a-boo *ngIf="hasChild" [name]="heroName"></peek-a-boo>
+      <div class="info">
+        <peek-a-boo *ngIf="hasChild" [name]="heroName"></peek-a-boo>
 
-      <h3>Lifecycle Hook Log</h3>
-      <div *ngFor="let msg of hookLog" class="log">{{msg}}</div>
+        <h3>Open the console and see the changes!!</h3>
+        <!-- <div *ngFor="let msg of hookLog" class="log">{{ msg }}</div> -->
+      </div>
     </div>
-  </div>
   `,
-  providers:  [ LoggerService ]
+  providers: [LoggerService],
 })
 export class PeekABooParentComponent {
+  hasChild: boolean;
+  hookLog: string[];
+  heroName: string;
 
-  hasChild = false;
-  hookLog: string[] = [];
-
-  heroName = 'Windstorm';
   private logger: LoggerService;
 
   constructor(logger: LoggerService) {
+    this.heroName = "";
+    this.hookLog = [];
+    this.hasChild = false;
     this.logger = logger;
     this.hookLog = logger.logs;
   }
@@ -40,22 +44,18 @@ export class PeekABooParentComponent {
   toggleChild() {
     this.hasChild = !this.hasChild;
     if (this.hasChild) {
-      this.heroName = 'Windstorm';
+      this.heroName = "Windstorm";
       this.logger.clear(); // clear log on create
     }
     this.hookLog = this.logger.logs;
-    this.logger.tick();
+    // debugger;
+    // Esto fuerza un renderizado
+    // this.logger.tick(); Esto es solo para entenderlo visualmente en el navagador
+    console.warn("Evento de cambio!");
   }
 
   updateHero() {
-    this.heroName += '!';
-    this.logger.tick();
+    this.heroName += "!";
+    // this.logger.tick(); Esto es solo para entenderlo visualmente en el navagador
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
