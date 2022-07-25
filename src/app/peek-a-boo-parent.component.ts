@@ -1,4 +1,11 @@
-import { Component } from "@angular/core";
+import {
+  AfterContentChecked,
+  AfterViewChecked,
+  Component,
+  DoCheck,
+  OnChanges,
+  SimpleChanges,
+} from "@angular/core";
 
 import { LoggerService } from "./logger.service";
 
@@ -26,7 +33,9 @@ import { LoggerService } from "./logger.service";
   `,
   providers: [LoggerService],
 })
-export class PeekABooParentComponent {
+export class PeekABooParentComponent
+  implements DoCheck, AfterViewChecked, AfterContentChecked
+{
   hasChild: boolean;
   hookLog: string[];
   heroName: string;
@@ -57,5 +66,17 @@ export class PeekABooParentComponent {
   updateHero() {
     this.heroName += "!";
     // this.logger.tick(); Esto es solo para entenderlo visualmente en el navagador
+  }
+
+  ngDoCheck() {
+    console.warn("ngDoCheck() - PADRE");
+  }
+
+  ngAfterContentChecked() {
+    console.warn("ngAfterContentChecked() - PADRE");
+  }
+
+  ngAfterViewChecked() {
+    console.warn("ngAfterViewChecked() - PADRE");
   }
 }
