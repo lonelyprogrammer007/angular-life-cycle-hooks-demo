@@ -17,7 +17,7 @@ import { PeekABooDirective } from "./peek-a-boo.directive";
 
 @Component({
   selector: "peek-a-boo",
-  template: `<p style="border: 2px solid green;">
+  template: `<p style="border: 5px solid green;">
     Now you see my hero, {{ name }}
   </p>`,
 })

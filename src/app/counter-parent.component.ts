@@ -1,48 +1,49 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { LoggerService } from './logger.service';
+import { LoggerService } from "./logger.service";
 
 @Component({
-  selector: 'counter-parent',
+  selector: "counter-parent",
   template: `
-  <h2>Counter Spy</h2>
+    <div style="border: 5px solid tomato;">
+      <h2>Counter Spy</h2>
 
-  <button type="button" (click)="updateCounter()">Update counter</button>
-  <button type="button" (click)="reset()">Reset Counter</button>
+      <button type="button" (click)="updateCounter()">Update counter</button>
+      <button type="button" (click)="reset()">Reset Counter</button>
 
-  <app-counter [counter]="value"></app-counter>
+      <app-counter [counter]="value"></app-counter>
+    </div>
 
-  <div class="info">
-    <h3>Spy Lifecycle Hook Log</h3>
-    <div *ngFor="let msg of spyLog" class="log">{{msg}}</div>
-  </div>
+    <!-- <div class="info">
+      <h3>Spy Lifecycle Hook Log</h3>
+      <div *ngFor="let msg of spyLog" class="log">{{ msg }}</div>
+    </div> -->
   `,
-  providers: [LoggerService]
+  providers: [LoggerService],
 })
 export class CounterParentComponent {
   value = 0;
-  spyLog: string[] = [];
+  // spyLog: string[] = [];
 
-  private logger: LoggerService;
+  // private logger: LoggerService;
 
   constructor(logger: LoggerService) {
-    this.logger = logger;
-    this.spyLog = logger.logs;
+    // this.logger = logger;
+    // this.spyLog = logger.logs;
     this.reset();
   }
 
   updateCounter() {
     this.value += 1;
-    this.logger.tick();
+    // this.logger.tick();
   }
 
   reset() {
-    this.logger.log('reset');
+    // this.logger.log("reset");
     this.value = 0;
-    this.logger.tick();
+    // this.logger.tick();
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

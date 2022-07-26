@@ -3,8 +3,6 @@ import {
   AfterViewChecked,
   Component,
   DoCheck,
-  OnChanges,
-  SimpleChanges,
 } from "@angular/core";
 
 import { LoggerService } from "./logger.service";
@@ -13,7 +11,7 @@ import { LoggerService } from "./logger.service";
   selector: "peek-a-boo-parent",
   template: `
     <hr />
-    <div class="parent" style="border: 2px solid red;">
+    <div class="parent" style="border: 5px solid red;">
       <h2>Peek-A-Boo</h2>
 
       <button type="button" (click)="toggleChild()">

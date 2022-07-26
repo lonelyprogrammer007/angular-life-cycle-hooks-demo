@@ -8,19 +8,19 @@ let nextId = 1;
 // Usage: <div appSpy>...</div>
 @Directive({ selector: "[appSpy]" })
 export class SpyDirective implements OnInit, OnDestroy {
-  @Input() heroObject!: string;
+  @Input() generalParam!: string;
   private id = nextId++;
 
   constructor(private logger: LoggerService) {}
 
   ngOnInit() {
     this.logger.log(`Spy #${this.id} onInit`);
-    console.info(`ngOnInit() - Spy directive - ${this.heroObject}`);
+    console.info(`ngOnInit() - Spy directive - ${this.generalParam}`);
   }
 
   ngOnDestroy() {
     this.logger.log(`Spy #${this.id} onDestroy`);
-    console.info("ngOnDestroy() - Spy directive");
+    console.info(`ngOnDestroy() - Spy directive - ${this.generalParam}`);
   }
 }
 
