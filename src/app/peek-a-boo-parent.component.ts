@@ -60,7 +60,7 @@ export class PeekABooParentComponent
     // debugger;
     // Esto fuerza un renderizado
     // this.logger.tick(); Esto es solo para entenderlo visualmente en el navagador
-    console.warn("Evento de cambio!");
+    //console.warn("Evento de cambio!");
   }
 
   updateHero() {
@@ -69,14 +69,14 @@ export class PeekABooParentComponent
   }
 
   ngDoCheck() {
-    console.warn("ngDoCheck() - PADRE");
+    //console.warn("ngDoCheck() - PADRE");
   }
 
   ngAfterContentChecked() {
-    console.warn("ngAfterContentChecked() - PADRE");
+    //console.warn("ngAfterContentChecked() - PADRE");
   }
 
   ngAfterViewChecked() {
-    console.warn("ngAfterViewChecked() - PADRE");
+    //console.warn("ngAfterViewChecked() - PADRE");
   }
 }

@@ -11,7 +11,7 @@ export class PeekABooDirective implements OnInit {
   // implement OnInit's `ngOnInit` method
   ngOnInit() {
     this.logIt("OnInit");
-    console.warn("ngOnInit() - HIJO - directiva");
+    //console.warn("ngOnInit() - HIJO - directiva");
   }
 
   logIt(msg: string) {

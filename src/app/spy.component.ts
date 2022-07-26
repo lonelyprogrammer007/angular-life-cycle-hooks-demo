@@ -1,37 +1,38 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { LoggerService } from './logger.service';
+import { LoggerService } from "./logger.service";
 
 @Component({
-  selector: 'spy-parent',
-  templateUrl: './spy.component.html',
-  providers:  [LoggerService]
+  selector: "spy-parent",
+  templateUrl: "./spy.component.html",
+  providers: [LoggerService],
 })
 export class SpyParentComponent {
-  newName = 'Herbie';
-  heroes: string[] = ['Windstorm', 'Magneta'];
+  newName;
+  heroes: string[];
 
   constructor(public logger: LoggerService) {
+    this.heroes = ["Windstorm", "Magneta"];
+    this.newName = "Herbie";
   }
 
   addHero() {
     if (this.newName.trim()) {
       this.heroes.push(this.newName.trim());
-      this.newName = '';
-      this.logger.tick();
+      this.newName = "";
+      // this.logger.tick();
     }
   }
   removeHero(hero: string) {
     this.heroes.splice(this.heroes.indexOf(hero), 1);
-    this.logger.tick();
+    // this.logger.tick();
   }
   reset() {
-    this.logger.log('reset');
+    this.logger.log("reset");
     this.heroes = [];
-    this.logger.tick();
+    // this.logger.tick();
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

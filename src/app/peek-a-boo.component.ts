@@ -45,7 +45,7 @@ export class PeekABooComponent
 
     const is = this.name ? "is" : "is not";
     this.logIt(`name ${is} known at construction`);
-    console.warn("construtor() - HIJO");
+    //console.warn("construtor() - HIJO");
   }
 
   // only called for/if there is an @input variable set by parent.
@@ -61,43 +61,43 @@ export class PeekABooComponent
     }
     this.logIt(`OnChanges: ${changesMsgs.join("; ")}`);
     this.verb = "changed"; // next time it will be a change
-    console.warn("ngOnChanges() - HIJO");
+    //console.warn("ngOnChanges() - HIJO");
   }
 
   // Beware! Called frequently!
   // Called in every change detection cycle anywhere on the page
   ngDoCheck() {
     this.logIt("DoCheck");
-    console.warn("ngDoCheck() - HIJO");
+    //console.warn("ngDoCheck() - HIJO");
   }
 
   ngAfterContentInit() {
     this.logIt("AfterContentInit");
-    console.warn("ngAfterContentInit() - HIJO");
+    //console.warn("ngAfterContentInit() - HIJO");
   }
 
   // Beware! Called frequently!
   // Called in every change detection cycle anywhere on the page
   ngAfterContentChecked() {
     this.logIt("AfterContentChecked");
-    console.warn("ngAfterContentChecked() - HIJO");
+    //console.warn("ngAfterContentChecked() - HIJO");
   }
 
   ngAfterViewInit() {
     this.logIt("AfterViewInit");
-    console.warn("ngAfterViewInit() - HIJO");
+    //console.warn("ngAfterViewInit() - HIJO");
   }
 
   // Beware! Called frequently!
   // Called in every change detection cycle anywhere on the page
   ngAfterViewChecked() {
     this.logIt("AfterViewChecked");
-    console.warn("ngAfterViewChecked() - HIJO");
+    //console.warn("ngAfterViewChecked() - HIJO");
   }
 
   ngOnDestroy() {
     this.logIt("OnDestroy");
-    console.warn("ngOnDestroy() - HIJO");
+    //console.warn("ngOnDestroy() - HIJO");
   }
 }
 
