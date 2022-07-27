@@ -11,7 +11,7 @@ export class ChildComponent {
   hero = "Magneta";
 
   pruebaMundo() {
-    console.error("prueba mundo!");
+    // console.error("prueba mundo!");
   }
 }
 

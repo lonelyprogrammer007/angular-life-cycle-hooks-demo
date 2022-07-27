@@ -39,7 +39,7 @@ export class AfterContentComponent
     // contentChild is set after the content has been initialized
     // this.logIt("AfterContentInit");
     this.doSomething();
-    console.warn("ORANGE: ngAfterContentInit");
+    // console.warn("ORANGE: ngAfterContentInit");
   }
 
   ngAfterContentChecked() {
@@ -50,7 +50,7 @@ export class AfterContentComponent
       this.prevHero = this.contentChild.hero;
       // this.logIt("AfterContentChecked");
       this.doSomething();
-      console.warn("ORANGE: ngAfterContentChecked");
+      // console.warn("ORANGE: ngAfterContentChecked");
     }
     this.contentChild.pruebaMundo();
   }
