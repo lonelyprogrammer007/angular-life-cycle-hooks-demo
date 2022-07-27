@@ -15,13 +15,13 @@ export class ChildViewComponent implements AfterViewChecked, DoCheck {
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
-    console.error("AZUL: ngDoCheck()");
+    // console.error("AZUL: ngDoCheck()");
   }
 
   ngAfterViewChecked(): void {
     //Called after every check of the component's view. Applies to components only.
     //Add 'implements AfterViewChecked' to the class.
-    console.warn("AZUL: ngAfterViewChecked()");
+    // console.warn("AZUL: ngAfterViewChecked()");
   }
 }
 

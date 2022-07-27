@@ -31,13 +31,13 @@ export class AfterViewParentComponent implements AfterViewChecked, DoCheck {
     this.logger.tick_then(() => (this.show = true));
   }
   ngAfterViewChecked() {
-    console.warn("VERDE: ngAfterViewChecked()");
+    // console.warn("VERDE: ngAfterViewChecked()");
   }
 
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
-    console.error("VERDE: ngDoCheck()");
+    // console.error("VERDE: ngDoCheck()");
   }
 }
 

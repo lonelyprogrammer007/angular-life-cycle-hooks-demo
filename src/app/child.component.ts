@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  template: `<label for="hero-name">Hero name: </label>
-  <input type="text" id="hero-name" [(ngModel)]="hero">`
+  selector: "app-child",
+  template: ` <div style="border: 5px solid darkviolet">
+    <label for="hero-name">Hero name: </label>
+    <input type="text" id="hero-name" [(ngModel)]="hero" />
+  </div>`,
 })
 export class ChildComponent {
-  hero = 'Magneta';
-}
+  hero = "Magneta";
 
+  pruebaMundo() {
+    console.error("prueba mundo!");
+  }
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.

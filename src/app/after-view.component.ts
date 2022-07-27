@@ -37,7 +37,7 @@ export class AfterViewComponent
   }
 
   ngDoCheck(): void {
-    console.error("SALMON: ngDoCheck()");
+    // console.error("SALMON: ngDoCheck()");
   }
 
   ngAfterViewInit() {
@@ -57,7 +57,7 @@ export class AfterViewComponent
       // this.logIt("AfterViewChecked");
       this.doSomething();
     }
-    console.warn("SALMON: ngAfterViewChecked()");
+    // console.warn("SALMON: ngAfterViewChecked()");
   }
 
   // This surrogate for real business logic sets the `comment`
