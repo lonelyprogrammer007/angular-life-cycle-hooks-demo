@@ -23,7 +23,7 @@ export class OnChangesParentComponent {
     this.hero = new Hero("Windstorm");
     // setting power only triggers onChanges if this value is different
     this.power = "sing";
-    console.error(this.childView);
+    //console.warn(this.childView);
     if (this.childView) {
       this.childView.reset();
     }

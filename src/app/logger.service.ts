@@ -32,7 +32,7 @@ export class LoggerService {
     this.tick_then(() => {});
   }
   tick_then(fn: () => any) {
-    setTimeout(fn, 0);
+    setTimeout(fn, 1000);
   }
 }
 

@@ -33,9 +33,9 @@ export class OnChangesComponent implements OnChanges, DoCheck {
       // this.changeLog.push(
       //   `${propName}: currentValue = ${cur}, previousValue = ${prev}`
       // );
-      console.error(
-        `${propName}: currentValue = ${cur}, previousValue = ${prev} ---- ${this.hero.name}`
-      );
+      //console.warn(
+      //   `${propName}: currentValue = ${cur}, previousValue = ${prev} ---- ${this.hero.name}`
+      // );
     }
   }
 
@@ -44,7 +44,7 @@ export class OnChangesComponent implements OnChanges, DoCheck {
   }
 
   ngDoCheck() {
-    console.error("Docheck");
+    //console.warn("Docheck");
   }
 }
 

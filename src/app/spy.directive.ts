@@ -15,12 +15,12 @@ export class SpyDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.logger.log(`Spy #${this.id} onInit`);
-    console.info(`ngOnInit() - Spy directive - ${this.generalParam}`);
+    //console.warn(`ngOnInit() - Spy directive - ${this.generalParam}`);
   }
 
   ngOnDestroy() {
     this.logger.log(`Spy #${this.id} onDestroy`);
-    console.info(`ngOnDestroy() - Spy directive - ${this.generalParam}`);
+    //console.warn(`ngOnDestroy() - Spy directive - ${this.generalParam}`);
   }
 }
 
